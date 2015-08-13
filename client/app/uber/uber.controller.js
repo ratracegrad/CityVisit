@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cityVisitApp')
-  .controller('UberCtrl', function ($scope, $http) {
+  .controller('UberCtrl', function ($scope) {
     $scope.awesomeThings = [];
 
   });
