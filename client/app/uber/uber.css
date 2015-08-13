@@ -1,0 +1,68 @@
+
+.welcome {
+    width: 100%;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid #E5E5E5;
+}
+
+.navbar-text {
+    margin-left: 15px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.panel-default > .panel-heading {
+    background: #fff;
+    border-bottom: .0635rem solid #888;
+    border-radius: .3125rem;
+    box-shadow: 0 .125rem 0 rgba(0,0,0,.3);
+    margin: 0;
+}
+
+.panel-group .panel {
+    margin-bottom: 15px;
+}
+
+.map {
+    background: -webkit-gradient(linear,left top,right top,color-stop(0%,rgba(51,170,162,.25)),color-stop(100%,rgba(18,149,229,.35)));
+    background: -webkit-linear-gradient(left,rgba(51,170,162,.35) 0,rgba(18,149,229,.9) 25%);
+    background: linear-gradient(to right,rgba(51,170,162,.35) 0,rgba(18,149,229,.9) 25%);
+    padding-top: 40px;
+    height: 1000px;
+}
+
+.drop20 {
+    background: url('/assets/images/map-bg.jpg') top/cover no-repeat;
+    padding-top: 5.625rem;
+    padding-bottom: 5rem;
+    position: relative;
+}
+
+.panel-title,
+.siteText {
+    color: #1e1e1e;
+    font-family: Lato,sans-serif;
+    font-weight: 700;
+    line-height: 1.2em;
+    margin: 5px 0;
+    padding: 0 1.875rem 0 0;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
+
+button.siteText:focus {
+   outline: none;
+}
+
+.collapse.in {
+    background: #f0eed8;
+    color: #1e1e1e;
+    border-radius: 0 0 .3125rem .3125rem;
+}
