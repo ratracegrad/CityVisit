@@ -1,9 +1,85 @@
+
+<script>
+    $(document).ready(initialize);
+    var map;
+
+var mapProp = {
+    center:new google.maps.LatLng(33.7573282,-84.3920464),
+    zoom:14,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+};
+    // entertainment
+    $('#fox').click(function () {
+        //$("#txtAge").toggle(this.checked);
+        addPin({lat: 33.7573282, lng: -84.3920464})
+    });
+    $('#tabernacle').click(function () {
+        //$("#txtAge").toggle(this.checked);
+        addPin({lat: 33.7589013, lng: -84.3914634})
+    });
+    $('#clermont').click(function () {
+        //$("#txtAge").toggle(this.checked);
+        addPin({lat: 33.7734342, lng: -84.3613114})
+    });
+
+    // sports
+    $('#dome').click(function () {
+        //$("#txtAge").toggle(this.checked);
+        addPin({lat: 33.7576897, lng: -84.4008285})
+    });
+    $('#phillips').click(function () {
+        //$("#txtAge").toggle(this.checked);
+        addPin({lat: 33.7572891, lng: -84.3963244})
+    });
+    $('#turner').click(function () {
+        //$("#txtAge").toggle(this.checked);
+        addPin({lat: 33.734808, lng: -84.3899729})
+    });
+    $('#speedway').click(function () {
+        //$("#txtAge").toggle(this.checked);
+        addPin({lat: 33.3835854, lng: -84.317926})
+    });
+
+function addPin(latLng) {
+    var marker = new google.maps.Marker({
+        position: latLng,
+        map: map,
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        title: "This is a new marker",
+        icon: "http://maps.google.com/mapfiles/ms/micons/blue.png"
+    });
+
+};
+
+function calcUber() {
+    // show estimates
+    // show get started button
+    document.getElementById("uberSecret").className = "uberVisible";
+};
+
+function initialize() {
+    var latlng = new google.maps.LatLng(33.7573282,-84.3920464);
+    var options = {
+        zoom: 13,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    map = new google.maps.Map($('#googleMap')[0], options);
+
+}
+
+</script>
+
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 
-<div class="container-fluid">
+<div class="container-fluid drop20">
     <div class="row map">
-        <div class="col-sm-4 col-sm-offset-4">
+        <div class="col-sm-2 col-sm-offset-1">
+            <h1 class="text-center roboto">Step 1</h1>
+            <h2 class="text-center roboto">Select Sites</h2>
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingOne">
@@ -20,13 +96,13 @@
               <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                     <div class="checkbox">
-                        <label><input type="checkbox" value="fox">Fox Theater</label>
+                        <label><input type="checkbox" value="fox" id="fox">Fox Theater</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="tabernacle">Tabernacle</label>
+                        <label><input type="checkbox" value="tabernacle" id="tabernacle">Tabernacle</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="clermont">Clermont Lounge</label>
+                        <label><input type="checkbox" value="clermont"id="clermont">Clermont Lounge</label>
                     </div>
                 </div>
               </div>
@@ -43,16 +119,16 @@
               <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
                     <div class="checkbox">
-                        <label><input type="checkbox" value="dome">Georgia Dome</label>
+                        <label><input type="checkbox" value="dome" id="dome">Georgia Dome</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="phillips">Phillips Arena</label>
+                        <label><input type="checkbox" value="phillips" id="phillips">Phillips Arena</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="turner">Turner Field</label>
+                        <label><input type="checkbox" value="turner" id="turner">Turner Field</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="speedway">Atlanta Motor Speedway</label>
+                        <label><input type="checkbox" value="speedway" id="speedway">Atlanta Motor Speedway</label>
                     </div>
                 </div>
               </div>
@@ -86,7 +162,110 @@
           </div>
         </div>
 
-     </div>
+        <div class="col-sm-8">
+            <div id="googleMap" style="width:800px;height:450px;"></div>
+        </div>
+
+    </div>
+
+    <section class="chooseCar">
+        <div class="row bigBottom">
+            <div class="columns small-12">
+                <h1 class="section-title text-center">Step 2</h1>
+                <h1 class="section-title text-center">Choose Your Car</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                <img src="assets/images/uberx.png" alt="Uber X">
+            </div>
+            <div class="col-sm-4 col-sm-offset-1">
+                <p class="playfair "><br>Everyday cars for everyday use.<br>
+Better, faster, and cheaper than a taxi.<br><br></p>
+
+                <span class="radio carRadio sol-sm-offset-2">
+                    <label>
+                        <input type="radio" name="uberx" id="uberx" value="uberx" class="radio">
+                        Select Uber X
+                    </label>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                <img src="assets/images/uberBlack.png" alt="Uber Black">
+            </div>
+            <div class="col-sm-4 col-sm-offset-1">
+                <p class="playfair "><br>Your own private driver, on demand.<br>
+Expect pickup in a high-end sedan within minutes.<br><br></p>
+
+                <span class="radio carRadio sol-sm-offset-2">
+                    <label>
+                        <input type="radio" name="uberblack" id="uberblack" value="uberblack" class="radio">
+                        Select Uber Black
+                    </label>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                <img src="assets/images/uberSUV.png"  alt="Uber SUV">
+            </div>
+            <div class="col-sm-4 col-sm-offset-1">
+                <p class="playfair "><br><br><br><br><br>For those times when you need a bit more space.<br>
+Seats up to six people in style..<br><br></p>
+
+                <span class="radio carRadio sol-sm-offset-2">
+                    <label>
+                        <input type="radio" name="ubersuv" id="ubersuv" value="ubersuv" class="radio">
+                        Select Uber SUV
+                    </label>
+                </span>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="step3">
+        <section class="skyline">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 step3top">
+                <h1 class="section-title2 text-center">Step 3</h1>
+                <h1 class="section-title2 text-center">Enter Your Address</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div>
+                    <input type="text" placeholder="Enter Your Address" name="address" class="address">
+                    <buton type="button" class="btn btn-default btn-large addrButton" onclick="calcUber()">Submit</buton>
+                </div>
+            </div>
+        </div>
+        <div class="row uberHidden" id="uberSecret">
+            <div class="col-sm-6 col-sm-offset-3 step3top">
+                <table align="center">
+                    <tr>
+                        <td><span class="uberDetails">Car Type:</span></td>
+                        <td><span class="uberDetails">&nbsp;&nbsp;&nbsp;Uber SUV</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="uberDetails">Price:</span></td>
+                        <td><span class="uberDetails">&nbsp;&nbsp;&nbsp;28-33 <emphisis>(estimate)</emphisis></span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="uberDetails">Car Arrives:</emphesis></span></td>
+                        <td><span class="uberDetails">&nbsp;&nbsp;&nbsp;5 minutes <emphesis>(estimate)</emphesis></span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        </section>
+    </section>
 </div>
+
 
 
