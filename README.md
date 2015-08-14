@@ -10,7 +10,9 @@ CityVisit was created to provide you with a list of tourist sites that you can v
 
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
+1. [Technology Stack](#technology)
 1. [Installation](#installation)
+1. [Testing](#testing)
 
 ## Usage
 CityVisit is a web application. It is built on the industry leading Twitter Bootstrap framework to provide a responsive framework. You an easily access CityVisit from a desktop computer, a laptop, a table or even your phone.
@@ -19,11 +21,21 @@ CityVisit is a web application. It is built on the industry leading Twitter Boot
 
 - Node 0.10.x
 - Express 4.0.x
+- Angular
+- UI-Route
 - Mongoose 3.8.x
 - Passport 0.2.x
 - Bootstrap latest
 - Grunt 0.4.x
 - Karma 0.8.x
+
+## Technology Stack
+City Visit is built upon the MEAN stack. Here are the technologies used in CityVisit
+
+- Mongoose
+- AngularJS
+- Node.js
+- Express
 
 ## Installation
 
@@ -32,4 +44,19 @@ From within the root directory:
 ``` bash
 npm install
 bower install
+```
+## Testing
+CityVisit comes with multiple test routines for unit testing of Angular modules and controllers. To run tests:
+
+``` bash
+grunt test
+```
+
+## Grunt Commands
+CityVisit utilizes the Grunt task runner. Here are the grunt commands that are available:
+``` bash
+grunt
+grunt build
+grunt serve
+grunt test
 ```
