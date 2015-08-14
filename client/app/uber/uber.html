@@ -8,45 +8,53 @@ var mapProp = {
     zoom:14,
     mapTypeId:google.maps.MapTypeId.ROADMAP
 };
+
     // entertainment
     $('#fox').click(function () {
-        //$("#txtAge").toggle(this.checked);
-        addPin({lat: 33.7573282, lng: -84.3920464})
+        addPin({lat: 33.7573282, lng: -84.3920464}, 'Fox Theater');
     });
     $('#tabernacle').click(function () {
-        //$("#txtAge").toggle(this.checked);
-        addPin({lat: 33.7589013, lng: -84.3914634})
+        addPin({lat: 33.7589013, lng: -84.3914634}, 'The Tabernacle home of the Blues');
     });
     $('#clermont').click(function () {
-        //$("#txtAge").toggle(this.checked);
-        addPin({lat: 33.7734342, lng: -84.3613114})
+        addPin({lat: 33.7734342, lng: -84.3613114}, 'The world famous Clermont Lounge');
     });
 
     // sports
     $('#dome').click(function () {
-        //$("#txtAge").toggle(this.checked);
-        addPin({lat: 33.7576897, lng: -84.4008285})
+        addPin({lat: 33.7576897, lng: -84.4008285}, 'Georgia Dome home of the Atlanta Falcons');
     });
     $('#phillips').click(function () {
-        //$("#txtAge").toggle(this.checked);
-        addPin({lat: 33.7572891, lng: -84.3963244})
+        addPin({lat: 33.7572891, lng: -84.3963244}, 'Phillips Arena');
     });
     $('#turner').click(function () {
-        //$("#txtAge").toggle(this.checked);
-        addPin({lat: 33.734808, lng: -84.3899729})
+        addPin({lat: 33.734808, lng: -84.3899729}, 'Turner Stadium home of the Atlanta Braves');
     });
     $('#speedway').click(function () {
-        //$("#txtAge").toggle(this.checked);
-        addPin({lat: 33.3835854, lng: -84.317926})
+        addPin({lat: 33.3835854, lng: -84.317926}, 'Atlanta Motor Speedway');
     });
 
-function addPin(latLng) {
+    //Popular Tourist Sites
+    $('#acquarium').click(function () {
+        addPin({lat: 33.763382, lng: -84.3951098}, 'Georgia Acquarium');
+    });
+    $('#coke').click(function () {
+        addPin({lat: 33.7628165, lng: -84.392901}, 'World of Coca-Cola');
+    });
+    $('#cnn').click(function () {
+        addPin({lat: 33.757885, lng: -84.3941724}, 'CNN Center and Tour');
+    });
+    $('#olympic').click(function () {
+        addPin({lat: 33.7607712, lng: -84.3931497}, 'Centennial Olympic Park');
+    });
+
+function addPin(latLng, title) {
     var marker = new google.maps.Marker({
         position: latLng,
         map: map,
         draggable: true,
         animation: google.maps.Animation.DROP,
-        title: "This is a new marker",
+        title: title,
         icon: "http://maps.google.com/mapfiles/ms/micons/blue.png"
     });
 
